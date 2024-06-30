@@ -24,8 +24,8 @@ const View = () => {
   };
 
   return (
-    <div className='flex gap-6 flex-wrap mt-5 mb-20 items-center justify-center'>
-      <div className='flex flex-col items-center cursor-pointer'>
+    <div>
+      <div className='flex flex-col items-center cursor-pointer pt-6'>
         <div
           onClick={() => {
             navigate('/');
@@ -35,18 +35,18 @@ const View = () => {
         </div>
         <h1 className='mt-2'>These are the newest Jobs that you can apply for.</h1>
       </div>
-
-      {job &&
-        job.map((item) => (
-          <div
-            key={item.id}
-            className='border h-auto w-[400px] md:w-[240px] p-2 flex flex-col gap-4 mx-4'
-          >
-            <div className={`bg-${colors[random]}-200 p-2 flex flex-col gap-5`}>
-              <div className='flex items-center justify-between '>
-                <img src='' alt='' />
-                <p className='bg-white rounded-xl w-20 text-center '>{item.Month}</p>
-                {/* <div
+      <div className='flex gap-6 flex-col md:flex-row flex-wrap mt-5 mb-20 items-center md:justify-start justify-center'>
+        {job &&
+          job.map((item) => (
+            <div
+              key={item.id}
+              className='border h-auto flex-wrap min-h-[320px] w-[400px] md:w-[240px] p-2 flex flex-col gap-4 mx-4'
+            >
+              <div className={`bg-${colors[random]}-200 p-2 flex flex-col gap-5`}>
+                <div className='flex items-center justify-between '>
+                  <img src='' alt='' />
+                  <p className='bg-white rounded-xl w-20 text-center '>{item.Month}</p>
+                  {/* <div
                   className='cursor-pointer text-xl'
                   onClick={() => {
                     deleteHandle(item.id);
@@ -54,26 +54,27 @@ const View = () => {
                 >
                   <MdOutlineDeleteOutline />
                 </div> */}
+                </div>
+                <p className=''>{item.CompanyName}</p>
+                <h1 className='text-4xl'>{item.JobProfile}</h1>
+                <p className=' border border-black px-2 p-1 rounded-xl  text-center flex items-center justify-start mt-2'>
+                  {item.WorkHour}
+                </p>
               </div>
-              <p className=''>{item.CompanyName}</p>
-              <h1 className='text-4xl'>{item.JobProfile}</h1>
-              <p className=' border border-black px-2 p-1 rounded-xl  text-center flex items-center justify-start mt-2'>
-                {item.WorkHour}
-              </p>
+              <div className='flex items-center justify-between'>
+                <div>
+                  <p className='font-bold'>{item.Salary}</p>
+                  <p>{item.Location}</p>
+                </div>
+                <div>
+                  <a href={`mailto:${item.Email}`} className='bg-black rounded p-2 text-white'>
+                    contact
+                  </a>
+                </div>
+              </div>
             </div>
-            <div className='flex items-center justify-between'>
-              <div>
-                <p className='font-bold'>{item.Salary}</p>
-                <p>{item.Location}</p>
-              </div>
-              <div>
-                <a href={`mailto:${item.Email}`} className='bg-black rounded p-2 text-white'>
-                  contact
-                </a>
-              </div>
-            </div>
-          </div>
-        ))}
+          ))}
+      </div>
     </div>
   );
 };
