@@ -17,10 +17,10 @@ const User = () => {
   }, []);
 
   return (
-    <div>
-      <div className='flex justify-between p-5 bg-[#c2e7da]'>
+    <div className='bg-black text-white'>
+      <div className='flex justify-between p-5 bg-purple-600'>
         {isAuth ? (
-          <div>
+          <div className='text-white'>
             <div>
               <div>
                 {/* image will be here according to the gender asked during the login process  */}
@@ -38,7 +38,7 @@ const User = () => {
         ) : (
           navigate('/')
         )}
-        <div className='bg-red-200 text-center flex items-center p-2'>
+        <div className='bg-red-600 text-white rounded-3xl text-center flex items-center px-3'>
           <Logout />
         </div>
       </div>

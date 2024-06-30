@@ -73,7 +73,7 @@ const Create = () => {
     }
   };
   return (
-    <div>
+    <div className='bg-black min-h-[100vh]'>
       {/* <div
         className='flex items-center justify-between p-4 bg-green-200 text-black mx-3 cursor-pointer mb-2 mt-5'
         onClick={() => {
@@ -103,7 +103,7 @@ const Create = () => {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className='flex flex-col gap-2 px-3 mb-5'>
+        <form onSubmit={handleSubmit} className='flex flex-col gap-2 px-3 mb-5 text-black'>
           <input
             type='text'
             name='CompanyName'
@@ -161,7 +161,7 @@ const Create = () => {
             className='p-2 border-2'
           />
 
-          <button className='bg-black text-white p-2'>Create Job</button>
+          <button className='bg-purple-600 text-white p-2'>Create Job</button>
         </form>
       </div>
       <p className='text-red-500 text-center'>{error}</p>

@@ -90,7 +90,7 @@ const Login = () => {
   }
 
   return (
-    <div className='bg-[#c2e7da] h-[100vh]'>
+    <div className='bg-black text-white h-[100vh]'>
       {!isAuth ? (
         <div className='flex flex-col items-center pt-10'>
           <div
@@ -102,7 +102,7 @@ const Login = () => {
             <CiHome />
           </div>
           <h1 className='mt-10 text-center'>Sign Up From here</h1>
-          <form onSubmit={submitHandle} className='flex flex-col gap-4 p-4 w-[100%]'>
+          <form onSubmit={submitHandle} className='flex flex-col gap-4 p-4 w-[100%]  text-black'>
             <input
               type='text'
               value={user.name}
@@ -116,7 +116,7 @@ const Login = () => {
               id=''
               value={user.role}
               onChange={handleChange}
-              className='border-2 border-black  p-2'
+              className='border-2 border-black text-black p-2'
             >
               <option value=''>--Select Role --</option>
               <option value='Employer' name='role'>
@@ -142,7 +142,7 @@ const Login = () => {
               className='border-2 border-black  p-2'
               placeholder='Enter your Password'
             />
-            <button className='p-2 bg-black text-white'>Log in</button>
+            <button className='p-2 bg-purple-600 text-white'>Log in</button>
           </form>
           <p className='font-bold text-red-500'>{alert}</p>
         </div>

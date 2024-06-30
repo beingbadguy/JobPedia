@@ -76,12 +76,12 @@ const Sign = () => {
   }
 
   return (
-    <div className='h-screen bg-[#c2e7da] flex flex-col  pt-20 items-center'>
+    <div className='h-screen bg-black text-white flex flex-col  pt-20 items-center'>
       <div className='text-3xl mb-4 cursor-pointer' onClick={() => navigate('/')}>
         <CiHome />
       </div>
       <h2 className='text-xl mb-4'>Login Here</h2>
-      <form onSubmit={handleSubmit} className='flex flex-col gap-2 w-80'>
+      <form onSubmit={handleSubmit} className='flex flex-col gap-2 text-black w-80'>
         <input
           type='email'
           placeholder='Enter your email'
@@ -98,7 +98,7 @@ const Sign = () => {
           value={userlogin.password}
           onChange={handleChange}
         />
-        <button type='submit' className='bg-black text-white p-2 rounded-md'>
+        <button type='submit' className='bg-purple-600 text-white p-2 rounded-md'>
           Log In
         </button>
       </form>
